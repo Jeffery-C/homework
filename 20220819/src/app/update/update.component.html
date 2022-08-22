@@ -1,0 +1,17 @@
+
+<div class="container">
+
+    <p class="h4 mb-4">Update User</p>
+
+    <form [formGroup]="userForm">
+
+        <!-- Add hidden form field to handle update -->
+        <input formControlName="name" type="text" class="form-control mb-4 col-4">
+
+        <input formControlName="age"  type="text" class="form-control mb-4 col-4">
+
+        <button type="button" class="btn btn-primary col-2" (click)="updateUser()">Save</button>
+
+    </form>
+
+</div>

@@ -1,0 +1,37 @@
+
+<!-- Add a button -->
+
+<div class="container">
+
+    <a [routerLink]="['create']" class="btn btn-primary btn-sm mb-3">
+        Add User
+    </a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td><a [routerLink]="[user.id]">{{ user.id }}</a></td>
+                <td><a [routerLink]="[user.id]">{{ user.name }}</a></td>
+                <td>
+                    <!-- Add update button/link -->
+                    <a [routerLink]="['update', user.id]" class="btn btn-primary btn-sm">
+                        Update
+                    </a>
+
+                    <!-- Add delete button/link -->
+                    <a class="btn btn-danger btn-sm"
+                        (click)="deleteUser(user.id)">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
