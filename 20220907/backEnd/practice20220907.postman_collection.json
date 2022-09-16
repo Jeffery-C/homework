@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "ad2e55db-b5c5-4e18-abb5-b5eade83d006",
+		"name": "practice20220907",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20218506"
+	},
+	"item": [
+		{
+			"name": "getStockDetail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"branchNo\": \"F62Z\",\r\n    \"custSeq\": \"01\",\r\n    \"stock\": null,\r\n    \"profitInterval\": {\r\n        \"isPercentage\": false,\r\n        \"profitMin\": -0.5,\r\n        \"profitMax\": 0.8\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/unreal/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"unreal",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStockSummary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"branchNo\": \"F62Z\",\r\n    \"custSeq\": \"01\",\r\n    \"stock\": \"1905\",\r\n    \"profitInterval\": {\r\n        \"isPercentage\": null,\r\n        \"profitMin\": null,\r\n        \"profitMax\": 0.9\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/unreal/sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"unreal",
+						"sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertStock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tradeDate\":\"20220830\",\r\n    \"branchNo\":\"F62S\",\r\n    \"custSeq\":\"00\",\r\n    \"docSeq\":\"ZZ005\",\r\n    \"stock\":\"1905\",\r\n    \"price\": 31.5,\r\n    \"qty\":2000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/unreal/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"unreal",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStockPrice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"stock\": \"1905\",\r\n        \"price\": 12.5\r\n    },\r\n    {\r\n        \"stock\": \"1203\",\r\n        \"price\": 31.54\r\n    },\r\n    {\r\n        \"stock\": \"1229\",\r\n        \"price\": 56.36\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDeliveryAmount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"branchNo\": \"F62Z\",\r\n    \"custSeq\": \"01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
